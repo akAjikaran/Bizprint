@@ -67,7 +67,7 @@ export const initialCard: CardData = {
 };
 
 export const sampleCard: CardData = {
-  companyName: "CARDARCH",
+  companyName: "BIZPRINT",
   companyLogo: "",
   primaryColor: "#00AEEE",
   secondaryColor: "#016098",
@@ -76,12 +76,12 @@ export const sampleCard: CardData = {
   employeeName: "AJI KARAN",
   jobTitle: "FOUNDER",
   phone: "+94 77 123 4567",
-  email: "hello@cardarch.com",
-  website: "cardarch.com",
+  email: "hello@bizprint.com",
+  website: "bizprint.com",
   address: "Colombo, Sri Lanka",
   linkedin: "/in/ajikaran",
-  instagram: "@cardarch",
-  twitter: "@cardarch",
+  instagram: "@bizprint",
+  twitter: "@bizprint",
 };
 
 export const templates: Template[] = [

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BIZ CARD",
+  title: "Bizprint",
   description: "Business card design and export workspace",
 };
 

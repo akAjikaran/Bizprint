@@ -332,7 +332,7 @@ export default function Home() {
   async function shareCard() {
     if (navigator.share) {
       await navigator.share({
-        title: "CardArch business card",
+        title: "Bizprint business card",
         text: shareText,
       });
       return;
@@ -361,7 +361,7 @@ export default function Home() {
 
   async function downloadImage(format: Extract<DownloadFormat, "png" | "jpg">) {
     const node = getExportNode(view);
-    const filename = `cardarch-${view}.${format}`;
+    const filename = `bizprint-${view}.${format}`;
     const options = {
       cacheBust: true,
       pixelRatio: 4,
@@ -395,7 +395,7 @@ export default function Home() {
     pdf.addImage(frontImage, "PNG", 0, 0, 3.5, 2);
     pdf.addPage([3.5, 2], "landscape");
     pdf.addImage(backImage, "PNG", 0, 0, 3.5, 2);
-    pdf.save("cardarch-business-card.pdf");
+    pdf.save("bizprint-business-card.pdf");
   }
 
   async function downloadCard(format: DownloadFormat) {
@@ -429,8 +429,8 @@ export default function Home() {
   return (
     <main className={isEditorOpen ? "app-shell editor-open" : "app-shell"}>
       <header className="topbar">
-        <a className="logo" href="#" aria-label="BIZ CARD home">
-          BIZ CARD
+        <a className="logo" href="#" aria-label="Bizprint home">
+          Bizprint
         </a>
         <nav className="main-nav" aria-label="Primary">
           <button className={mode === "templates" ? "nav-link active" : "nav-link"} type="button" onClick={openTemplates}>
