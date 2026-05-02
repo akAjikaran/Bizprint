@@ -427,7 +427,7 @@ export default function Home() {
   }
 
   return (
-    <main className={isEditorOpen ? "app-shell editor-open" : "app-shell"}>
+    <main className={`app-shell mode-${mode}${isEditorOpen ? " editor-open" : ""}`}>
       <header className="topbar">
         <a className="logo" href="#" aria-label="Bizprint home">
           Bizprint

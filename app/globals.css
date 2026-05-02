@@ -2375,6 +2375,10 @@ input {
 }
 
 @media screen and (max-width: 760px) {
+  :root {
+    --mobile-primary-nav-height: 68px;
+  }
+
   html {
     scroll-padding-top: 112px;
   }
@@ -2390,14 +2394,14 @@ input {
   }
 
   .app-shell {
-    padding-bottom: calc(88px + env(safe-area-inset-bottom));
+    padding-bottom: calc(var(--mobile-primary-nav-height) + env(safe-area-inset-bottom));
   }
 
   .topbar {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 12px;
-    min-height: 104px;
-    padding: 12px 14px 10px;
+    min-height: 64px;
+    padding: 10px 14px;
   }
 
   .logo {
@@ -2406,23 +2410,31 @@ input {
   }
 
   .main-nav {
-    grid-column: 1 / -1;
-    justify-content: stretch;
-    gap: 6px;
+    position: fixed;
+    right: 0;
+    bottom: env(safe-area-inset-bottom);
+    left: 0;
+    z-index: 19;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
     width: 100%;
-    padding-top: 0;
-    border: 1px solid #dfe3e8;
-    border-radius: 8px;
-    background: #f5f7fa;
+    height: var(--mobile-primary-nav-height);
+    padding: 6px 10px;
+    border-top: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
   }
 
   .main-nav a,
   .nav-link {
     flex: 1 1 0;
-    min-height: 42px;
-    border-radius: 7px;
+    display: grid;
+    place-items: center;
+    min-height: 54px;
+    border-radius: 8px;
     color: #536070;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
   }
 
@@ -2674,7 +2686,7 @@ input {
 
   .floating-edit {
     right: 16px;
-    bottom: calc(92px + env(safe-area-inset-bottom));
+    bottom: calc(var(--mobile-primary-nav-height) + 18px + env(safe-area-inset-bottom));
     width: 60px;
     height: 60px;
   }
@@ -2682,7 +2694,7 @@ input {
   .edit-panel {
     top: auto;
     right: 0;
-    bottom: calc(72px + env(safe-area-inset-bottom));
+    bottom: calc(var(--mobile-primary-nav-height) + env(safe-area-inset-bottom));
     left: 0;
     width: 100%;
     max-height: min(78dvh, 680px);
@@ -2756,15 +2768,6 @@ input {
   }
 
   .view-switcher {
-    height: calc(72px + env(safe-area-inset-bottom));
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-
-  .view-switcher button {
-    min-height: 72px;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.12em;
+    display: none;
   }
 }
