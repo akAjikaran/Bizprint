@@ -34,7 +34,11 @@ export function TemplateGallery({
             key={template.id}
           >
             <div className="template-preview" style={{ "--template-accent": template.accent } as CSSProperties}>
-              <FrontCard card={sampleCard} template={template.id} />
+              {template.id === "blue-ribbon" || template.id === "red-chevron" || template.id === "gold-corners" ? (
+                <BackCard card={sampleCard} template={template.id} />
+              ) : (
+                <FrontCard card={sampleCard} template={template.id} />
+              )}
             </div>
             <div className="template-meta">
               <div>

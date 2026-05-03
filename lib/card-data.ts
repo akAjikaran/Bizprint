@@ -19,7 +19,7 @@ export type CardData = {
 export type ViewMode = "front" | "back";
 export type DownloadFormat = "png" | "jpg" | "pdf";
 export type AppMode = "editor" | "templates" | "history" | "preview" | "summary";
-export type TemplateId = "architect" | "gallery" | "executive" | "blue-wave" | "brand-chevron";
+export type TemplateId = "architect" | "gallery" | "executive" | "blue-wave" | "brand-chevron" | "orange-curve" | "blue-ribbon" | "red-chevron" | "gold-corners";
 
 export type Template = {
   id: TemplateId;
@@ -86,6 +86,36 @@ export const sampleCard: CardData = {
 
 export const templates: Template[] = [
   {
+    id: "gold-corners",
+    name: "Gold Corners",
+    description: "White and midnight card with gold angled corner accents.",
+    accent: "#d8ab51",
+  },
+  {
+    id: "red-chevron",
+    name: "Red Chevron",
+    description: "Bold red and midnight card with a back-side contact preview.",
+    accent: "#ff0223",
+  },
+  {
+    id: "blue-ribbon",
+    name: "Blue Ribbon",
+    description: "Blue and yellow ribbon design with contact details on the preview side.",
+    accent: "#005dbf",
+  },
+  {
+    id: "orange-curve",
+    name: "Orange Curve",
+    description: "White card with burgundy wave graphics and orange corner accents.",
+    accent: "#960c4b",
+  },
+  {
+    id: "blue-wave",
+    name: "Blue Wave",
+    description: "Clean white identity face with blue curved edge graphics.",
+    accent: "#009fdf",
+  },
+  {
     id: "architect",
     name: "Architect",
     description: "Dark front, clean back, trim-safe layout.",
@@ -102,12 +132,6 @@ export const templates: Template[] = [
     name: "Executive",
     description: "Deep charcoal face with a refined bronze contact side.",
     accent: "#a46f3b",
-  },
-  {
-    id: "blue-wave",
-    name: "Blue Wave",
-    description: "Clean white identity face with blue curved edge graphics.",
-    accent: "#009fdf",
   },
   {
     id: "brand-chevron",
